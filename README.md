@@ -1,6 +1,5 @@
 # IAP24-05
-
-Our project is in the master branch
+Project name : a L p skinton costmetic
 
 Group members:
 Name : Wilasinee Kheaupo
