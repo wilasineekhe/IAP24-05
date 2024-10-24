@@ -707,41 +707,74 @@ body{
 /*=============================
 	End Feautes CSS
 ===============================*/
+/* Ensure the container is using flexbox to align items */
 .experts-container {
     display: flex;
-    justify-content: center; /* Center the boxes horizontally */
-    flex-wrap: wrap; /* Allow the boxes to wrap on smaller screens */
-    gap: 20px; /* Space between the boxes */
-    padding: 10px 0; /* Padding around the container */
+    justify-content: center;
+    gap: 20px; /* Adjust gap for spacing between boxes */
+    flex-wrap: wrap;
 }
 
-.expert-box {
-    width: 30%; /* Ensure that three boxes fit in a single row */
-    transition: transform 0.3s;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
+/* Standardize image sizes */
 .expert-box img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
+    width: 100%; /* Make images fill the box width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 150px; /* Fixing maximum height for consistency */
+    object-fit: cover; /* Ensures the image covers the allotted area without distortion */
 }
 
-.expert-info {
-    background-color: #f4f4f4;
-    padding: 10px;
-    margin-top: -5px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-
-.social-icons {
+/* Equalize the size of each expert box */
+/* Adjusting the container to ensure it accommodates larger boxes nicely */
+.experts-container {
     display: flex;
-    justify-content: center; /* Center the social icons */
-    gap: 10px; /* Space between icons */
+    justify-content: center; /* Keeps boxes centered */
+    flex-wrap: wrap; /* Allows boxes to wrap on smaller screens */
+    gap: 20px; /* Space between boxes */
+    padding: 20px; /* Adds padding around the container for better spacing */
 }
+
+/* Enhancing the size of each expert box */
+.expert-box {
+    flex: 1 1 30%; /* Flex grow, flex shrink, and flex basis set to take up 30% of the container's width */
+    max-width: calc(33.333% - 40px); /* Adjusting max width to account for the gap, ensuring 3 boxes per row */
+    padding: 20px; /* Increased padding for a larger overall box */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    margin-bottom: 20px; /* Space at the bottom of each box */
+    min-height: 320px; /* Increased minimum height to make the box taller */
+}
+
+/* Ensure images scale appropriately within the larger boxes */
+.expert-box img {
+    width: 100%; /* Images take the full width of the box */
+    height: auto;
+    max-height: 200px; /* Increase max-height to accommodate the larger box size */
+    object-fit: cover; /* Ensures the image covers the area nicely without distortion */
+}
+
+/* Standardizing the height for text information to keep uniformity */
+.expert-info {
+    flex-grow: 1; /* Allows the text area to expand and fill available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Spreads content evenly */
+    padding: 10px;
+    overflow: hidden; /* Hides any overflow */
+}
+
+/* Adjustments for social icons to align with the new layout */
+.social-icons {
+    margin-top: 10px;
+    width: 100%; /* Makes sure icons span the full width of the box */
+    justify-content: center; /* Center-aligns icons if they are in a flex container */
+	gap: 20px;
+}
+
 
 .experts-section h1 {
     font-size: 32px;
@@ -920,16 +953,19 @@ body{
 =========================*/
 
 /*--------skintone-------*/
+/* General content layout */
 .content {
     display: flex;
     justify-content: center;
-    align-items: stretch; /* Ensures all items stretch to the same height */
+    align-items: stretch;
     gap: 20px;
-	text-align: center;
+    text-align: center;
     max-width: 1000px;
-	margin-left: 260px;
-	margin-top: 5px;
+    margin: 0 auto; /* Center the content */
+    padding: 20px; /* Add some padding */
+    margin-top: 5px;
     margin-bottom: 80px;
+    flex-wrap: wrap; /* Ensure content wraps on small screens */
 }
 
 .tone {
@@ -939,55 +975,66 @@ body{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 200px;
     display: flex;
-    flex-direction: column; /* Aligns items vertically */
-    justify-content: space-between; /* Spreads items evenly */
-    min-height: 400px; /* Ensures a minimum height */
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px;
+    margin-bottom: 20px;
 }
+
 .tone img {
     width: 100%;
     border-radius: 10px;
 }
+
 .tone h3 {
     margin-top: 10px;
     font-size: 1.2em;
 }
+
 .tone p {
     color: #666;
-    flex-grow: 1; /* Allows paragraph to take up available space */
+    flex-grow: 1;
     margin-bottom: 10px;
 }
+
 .veins {
     display: flex;
     justify-content: center;
     gap: 5px;
     margin: 10px 0;
 }
+
 .veins span {
     width: 20px;
     height: 20px;
     border-radius: 50%;
 }
+
 .cool .vein1 {
     background-color: rgb(66, 138, 255);
 }
+
 .cool .vein2 {
     background-color: rgb(136, 102, 197);
 }
+
 .warm .vein1 {
     background-color: darkgreen;
 }
+
 .warm .vein2 {
     background-color: olive;
 }
+
 .neutral .vein1 {
     background-color: rgb(220, 137, 207);
 }
+
 .neutral .vein2 {
     background-color: rgb(142, 0, 181);
 }
-/*--------skintone-------*/
 
-/*------ Article--------*/
+/*------ Article Section --------*/
 .article-section {
     display: flex;
     flex-direction: column;
@@ -999,22 +1046,20 @@ body{
 
 .article {
     background-color: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
-    justify-content: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-left: 260px;
-	max-width: 1000px; /* ขนาดกว้างสุดของกล่อง */
+    max-width: 1000px;
     display: flex;
     align-items: center;
     position: relative;
-	margin-bottom: 20px;
+    margin: 20px auto; /* Centered article */
 }
 
 .article img {
     width: 80px;
     height: 80px;
-    margin-right: 20px; /* ระยะห่างระหว่างรูปกับเนื้อหา */
+    margin-right: 20px;
 }
 
 .article-details {
@@ -1039,16 +1084,81 @@ body{
     text-decoration: underline;
 }
 
+/* ------ Media Queries for Mobile Responsiveness ------ */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Stack items vertically */
+        margin: 0 auto; /* Center content */
+    }
+
+    .tone {
+        width: 90%; /* Make tones wider on small screens */
+        margin: 10px auto; /* Add some margin */
+    }
+
+    .article {
+        flex-direction: column; /* Stack image and text vertically */
+        padding: 15px;
+        max-width: 90%; /* Reduce width for smaller screens */
+        margin-left: 0;
+    }
+
+    .article img {
+        margin-bottom: 15px; /* Space below image */
+        width: 100px;
+        height: 100px; /* Slightly larger images for readability */
+    }
+
+    .article-title {
+        font-size: 16px; /* Slightly smaller text */
+    }
+
+    .article-description {
+        font-size: 14px;
+    }
+
+    .article-link a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tone {
+        width: 100%; /* Full width on very small screens */
+        min-height: 300px; /* Adjust minimum height */
+    }
+
+    .article {
+        padding: 10px;
+        max-width: 100%; /* Make article full width */
+    }
+
+    .article img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .article-title {
+        font-size: 14px; /* Smaller title for small screens */
+    }
+
+    .article-description {
+        font-size: 12px;
+    }
+}
+
+
 /*------ Article--------*/
 
 /*=========================
 	Start Footer CSS
 ===========================*/
-.footer{
+/* .footer{
 	position:relative;
+
 }
 .footer .footer-top{
-	padding:100px 0px;
+	padding: 10px 60px;
 	position:relative;
 	background:#ff0099;
 }
@@ -1061,7 +1171,71 @@ body{
 	width:100%;
 	background:#000;
 	opacity:0.1;
+} */
+
+/* body {
+    margin: 0; 
+    display: flex;
+    flex-direction: column; 
+    min-height: 100vh; 
+}  */
+
+/* html, body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
+
+.footer {
+    margin-top: auto;
+    width: 100%; 
+} */
+
+html, body {
+    height: 100%; /* full height of the viewport */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* stack header, content, and footer */
+}
+
+body {
+    flex: 1; /* Ensures the body element expands to fill available space */
+}
+
+body > header, body > footer {
+    flex-shrink: 0; /* prevent header and footer from shrinking */
+}
+
+body > .main-content {
+    flex-grow: 1; /* consume all available space */
+}
+
+
+
+footer {
+    flex-shrink: 0; /* Prevents the footer from shrinking */
+    width: 100%;
+}
+
+
+
+.footer .footer-top {
+    padding: 10px 60px; 
+	background:#e83e8c;
+} 
+
+.footer .footer-top:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    bottom: 100%; 
+    background: #000; 
+    opacity: 0.1; 
+} 
+ 
 
 .footer .single-footer .social{
 	margin-top:25px;
@@ -1230,12 +1404,20 @@ body{
 	color:#2C2D3F;
 }
 .footer .copyright {
+
     background: #ff0099;
-    padding: 25px 0px;
+	padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 5px; /* Adjust as needed */
+    padding-bottom: 5px; /* Adjust as needed */
     text-align: center;
     width: auto; /* ให้ความกว้างเต็มหน้าจอ */
     margin: 0; /* ลบ margin เพื่อให้ชิดขอบ */
+	
 }
+
+
+
 
 .footer .copyright .copyright-content p {
     color: #fff;
