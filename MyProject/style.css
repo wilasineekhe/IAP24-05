@@ -277,7 +277,7 @@ body{
 }
 .header .nav li a {
 	color: #2C2D3F;
-	font-size: 14px;
+	font-size: 17px;
 	font-weight: 500;
 	text-transform: capitalize;
 	padding: 25px 12px;
@@ -704,6 +704,61 @@ body{
 .Feautes .single-features p {
 	margin-top: 20px;
 }
+
+.Feautes .choose-left1 {
+	/* padding: 150px 30px; */
+	margin-top: 90px;
+}
+
+.Feautes .choose-left1 h3 {
+    font-size: 33px;
+    color: #2C2D3F;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    position: relative; /* Make h3 the reference point for the :before pseudo-element */
+}
+
+.Feautes .choose-left1 h3:before {
+    position: absolute; /* Change to absolute positioning */
+    content: "";
+/* Adjust to center */
+    top: 100%; /* Position below the h3 */
+    height: 2px;
+    width: 150px;
+    /* background: #a5d2ff; */
+}
+
+.Feautes, .choose-left1, .span {
+	position: relative;
+	text-align: center;
+}
+
+.Feautes .choose-left1 p{
+	margin-bottom:30px;
+	font-size: 17px;
+	
+}
+.Feautes .choose-left1 .list li {
+	color: #868686;
+	margin-bottom: 12px;
+
+}
+.Feautes .choose-left1 .list li:last-child{
+	margin-bottom:0px;
+}
+.Feautes .choose-left1 .list li i{
+	height:15px;
+	width:15px;
+	line-height:15px;
+	text-align:center;
+	background:#ff0099;
+	color:#fff;
+	font-size:14px;
+	border-radius:100%;
+	padding-left:2px;
+	margin-right:16px;
+}
 /*=============================
 	End Feautes CSS
 ===============================*/
@@ -863,6 +918,36 @@ body{
 /*===================
 	End Fun Facts
 =====================*/
+
+.search-bar {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-bar input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #ff0099;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.search-bar button:hover {
+    background-color: #e6007e;
+}
+
 
 /*===================
 	Why choose CSS
@@ -1222,7 +1307,7 @@ footer {
 
 
 .footer .footer-top {
-    padding: 10px 60px; 
+    padding: 60px 0px; 
 	background:#e83e8c;
 } 
 
@@ -1408,11 +1493,12 @@ footer {
     background: #ff0099;
 	padding-right: 15px;
     padding-left: 15px;
-    padding-top: 5px; /* Adjust as needed */
+    padding-top: 15px; /* Adjust as needed */
     padding-bottom: 5px; /* Adjust as needed */
     text-align: center;
     width: auto; /* ให้ความกว้างเต็มหน้าจอ */
     margin: 0; /* ลบ margin เพื่อให้ชิดขอบ */
+	font-size: 16px;
 	
 }
 

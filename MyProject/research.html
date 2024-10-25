@@ -81,11 +81,11 @@
 									<nav class="navigation">
 										<ul class="nav menu">
 											<li><a href="home.html">Home<i></i></a></li>
-											<li><a href="skintone.html">SkinTone</a></li>
+											<li><a href="skintone.html">Skintone</a></li>
 											<li><a href="cosmetic.html">Cosmetics</a></li>
 											<li><a href="">About Us<i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
-													<li><a href="aboutus.html">Our Developer</a></li>
+													<li><a href="aboutus.html">Our Developers</a></li>
 												</ul>
 											</li>
 											<li><a href="research.html">Research</a></li>
@@ -121,7 +121,11 @@
 		<!-- End Breadcrumbs -->
 		<div class="article-section">
 		<h2>The various research articles related to skin tone and cosmetics</h2></div>
-			<!-- Articles 1-5 -->
+		<div class="search-bar">
+			<input type="text" id="searchInput" placeholder="Search for research articles..." onkeyup="filterArticles()">
+			<button type="button" onclick="filterArticles()">Search</button>
+		</div>
+		
 			<div class="article">
 				<img src="https://sdfestaticassets-eu-west-1.sciencedirectassets.com/prod/0b5a3635317a1ad6a1eb746b8ef9a55ea98e31ac/image/elsevier-non-solus.png" alt="Placeholder Image">
 				<div class="article-details">
@@ -326,5 +330,6 @@
 		<script src="js/bootstrap.min.js"></script>
 		<!-- Main JS -->
 		<script src="js/main.js"></script>
+		<script src="research.js"></script>
     </body>
 </html>

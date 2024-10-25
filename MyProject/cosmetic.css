@@ -19,7 +19,7 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 .menu-bar a {
-    color: #232323; 
+    color: #606060; 
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
@@ -31,6 +31,12 @@ body {
 }
 .menu-bar a.active{
     color: #ff0099; 
+}
+
+.menu-bar a.wish-list{
+    color: #ffffff;
+    padding: 5px;
+    background: rgb(170, 204, 238);
 }
 
 .menu-bar.hidden {
@@ -47,7 +53,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    margin-bottom: 50px;
+
 }
 .text-section {
     width: 50%;
@@ -64,7 +71,7 @@ body {
 }
 .text-section .quiz-button {
     padding: 15px 20px;
-    background-color: black;
+    background-color: #e195c2;
     color: white;
     text-transform: uppercase;
     text-decoration: none;
@@ -72,13 +79,24 @@ body {
     display: inline-block;
 }
 
-
-/* Slideshow container */
 .slideshow-container {
-    width: 50%;
-    position: relative;
-    margin: auto;
+    display: flex;
+    justify-content: space-between; /* Space between images */
+    align-items: center;
+    width: 100%;
 }
+
+.mySlides {
+    flex: 1; /* Allows each slide to take up equal space */
+    margin: 0 10px; /* Space between slides */
+}
+
+.mySlides img {
+    padding-top: 70px;
+    width: 100%; /* Ensure the images take up the entire space of each slide */
+    height: auto;
+}
+
 
 /* Hide images by default */
 .mySlides {
